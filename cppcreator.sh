@@ -3,16 +3,16 @@ if [ "$1" == "" ]; then
     exit 1
 fi
 
-cp -i ~/repos/42-cpp-creator/cpptempcreator/templates/dummie.cpp $1.cpp
-cp -i ~/repos/42-cpp-creator/cpptempcreator/templates/dummie.hpp $1.hpp
+cp -i $(dirname $0)/templates/dummie.cpp $1.cpp
+cp -i $(dirname $0)/templates/dummie.hpp $1.hpp
 if [ "$2" == "make" ]; then
-    cp -i ~/repos/42-cpp-creator/cpptempcreator/templates/Makefile Makefile
+    cp -i $(dirname $0)/templates/Makefile Makefile
 fi
     
-sed -i "s/dummie/$1/g" $1.cpp
-sed -i "s/dummie/$1/g" $1.hpp
-sed -i "s/DUMMIE/$(echo $1 | tr '[:lower:]' '[:upper:]')/g" $1.hpp
+sed -i "" "s/dummie/$1/g" $1.cpp
+sed -i "" "s/dummie/$1/g" $1.hpp
+sed -i "" "s/DUMMIE/$(echo $1 | tr '[:lower:]' '[:upper:]')/g" $1.hpp
 
 if [ "$2" == "make" ]; then
-    sed -i "s/dummie/$1/g" Makefile
+    sed -i "" "s/dummie/$1/g" Makefile
 fi
