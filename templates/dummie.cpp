@@ -15,7 +15,7 @@ dummie::~dummie() {
 
 dummie& dummie::operator=(dummie const& rhs) {
 	(void) rhs;
-	std::cout << "dummie copy assignment operator called" << std::endl;
+	std::cout << "dummie assignment operator called" << std::endl;
 	return (*this);
 }
 
